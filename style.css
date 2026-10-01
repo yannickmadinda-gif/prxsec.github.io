@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("https://www.logodesignlove.com/wp-content/uploads/2012/08/microsoft-logo-01.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: -1;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 80px rgba(255, 0, 0, 1);
+    }
+}
+
+.popup-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.popup-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    border: 3px solid #ff0000;
+}
+
+.popup-message h1 {
+    color: #ff0000;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0.7;
+    }
+}
+
+.alert-text {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.btn-support {
+    display: inline-block;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: 2px solid #cc0000;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+.btn-support:hover {
+    background-color: #cc0000;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #ff0000;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.close-btn:hover {
+    color: #cc0000;
+}
+
+/* Trojan scroll animations */
+.trojan-top-container {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.trojan-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    white-space: nowrap;
+    animation: scrollLeft 10s linear infinite;
+    display: flex;
+    gap: 10px;
+}
+
+.trojan-scroll img,
+.trojan-scroll-top img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.trojan-scroll-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    white-space: nowrap;
+    animation: scrollRight 10s linear infinite;
+    display: flex;
+    gap: 10px;
+}
+
+.trojan-scroll-bottom {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 80px;
+    white-space: nowrap;
+    animation: scrollLeft 10s linear infinite reverse;
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.trojan-scroll-bottom img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.popup-content {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.popup-message {
+    background: rgba(255, 255, 255, 0.65);
+    color: #111;
+    border-radius: 12px;
+    padding: 20px;
+    text-shadow: none;
+}
+
+.alert-text {
+    color: #111;
+    font-weight: 600;
+}
+
+.popup-bg {
+    display: none;
+}
+.popup-content {
+    width: 90%;
+    max-width: 700px;
+    min-height: 420px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+@media (max-width: 600px) {
+    .popup-content {
+        width: 94%;
+        min-height: 380px;
+        padding: 20px;
+    }
+}
+.popup-content {
+    width: 96%;
+    max-width: 1000px;
+    min-height: 765px;
+    padding: 45px;
+}
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.popup-content {
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    min-height: 100vh;
+
+    margin: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-radius: 0;
+}
